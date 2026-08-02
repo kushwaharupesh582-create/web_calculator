@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculator</title>
+  <link rel="stylesheet" href="cal_style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Animated Ambient Aura Background -->
+  <div class="aura-bg">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+  </div>
+
+  <!-- Interactive Outside Cursor Glow Light -->
+  <div class="cursor-glow" id="cursor-glow"></div>
+
+  <!-- Top Bar with Live Clock -->
+  <header class="top-bar">
+    <div class="brand">CALCULATOR</div>
+    <div id="live-clock" class="clock-display">00:00:00 AM</div>
+  </header>
+
+  <!-- Main Calculator Wrapper -->
+  <main class="calc-wrapper">
+    <div class="calculator-card" id="calculator">
+      
+      <!-- Display Screen (scrollable) -->
+      <div class="display-container" id="display-container">
+        <div class="history-panel" id="history-panel"></div>
+        <div class="expression-line" id="expression" contenteditable="true"></div>
+        <div class="result-line" id="result">0</div>
+      </div>
+
+      <!-- Mode Selector -->
+      <div class="mode-bar">
+        <button class="mode-btn active" id="mode-basic-btn">
+          <span>Basic</span>
+        </button>
+        <button class="mode-btn" id="mode-trig-btn">
+          <span>Scientific</span>
+        </button>
+      </div>
+
+      <!-- Scientific Panel -->
+      <div class="keypad extended-keypad hidden" id="scientific-panel">
+        <button class="btn btn-sci" onclick="appendFunc('sin')">sin</button>
+        <button class="btn btn-sci" onclick="appendFunc('cos')">cos</button>
+        <button class="btn btn-sci" onclick="appendFunc('tan')">tan</button>
+        <button class="btn btn-sci" onclick="appendFunc('log')">log</button>
+        <button class="btn btn-sci" onclick="appendFunc('ln')">ln</button>
+        <button class="btn btn-sci" onclick="appendValue('^')">x^y</button>
+        <button class="btn btn-sci" onclick="appendValue('π')">π</button>
+        <button class="btn btn-sci" onclick="appendFunc('sqrt')">√</button>
+      </div>
+
+      <!-- Main Keypad -->
+      <div class="keypad main-keypad">
+        <button class="btn btn-clear-all glow-red" id="btn-ac" onclick="clearAll()">AC</button>
+        <button class="btn btn-clear-one glow-gold" id="btn-ce" onclick="clearOne()">⌫</button>
+        <button class="btn btn-op" onclick="appendValue('%')">%</button>
+        <button class="btn btn-op" onclick="appendValue('÷')">÷</button>
+
+        <button class="btn btn-num" onclick="appendValue('7')">7</button>
+        <button class="btn btn-num" onclick="appendValue('8')">8</button>
+        <button class="btn btn-num" onclick="appendValue('9')">9</button>
+        <button class="btn btn-op" onclick="appendValue('×')">×</button>
+
+        <button class="btn btn-num" onclick="appendValue('4')">4</button>
+        <button class="btn btn-num" onclick="appendValue('5')">5</button>
+        <button class="btn btn-num" onclick="appendValue('6')">6</button>
+        <button class="btn btn-op" onclick="appendValue('-')">-</button>
+
+        <button class="btn btn-num" onclick="appendValue('1')">1</button>
+        <button class="btn btn-num" onclick="appendValue('2')">2</button>
+        <button class="btn btn-num" onclick="appendValue('3')">3</button>
+        <button class="btn btn-op" onclick="appendValue('+')">+</button>
+
+        <button class="btn btn-num span-2" onclick="appendValue('0')">0</button>
+        <button class="btn btn-num" onclick="appendValue('.')">.</button>
+        <button class="btn btn-equals glow-gold" onclick="calculate()">=</button>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="cal_script.js"></script>
+</body>
+</html>
