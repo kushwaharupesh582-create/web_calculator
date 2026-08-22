@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Calculator</title>
+  <link rel="stylesheet" href="cal_style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Animated Ambient Aura Background -->
+  <div class="aura-bg">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+  </div>
+
+  <!-- Interactive Outside Cursor Glow Light -->
+  <div class="cursor-glow" id="cursor-glow"></div>
+
+  <!-- Top Bar with Live Clock -->
+  <header class="top-bar">
+    <div class="brand">CALCULATOR</div>
+    <div id="live-clock" class="clock-display">00:00:00 AM</div>
+  </header>
+
+  <!-- Main Calculator Wrapper -->
+  <main class="calc-wrapper">
+    <div class="calculator-card" id="calculator">
+
+      <!-- Display Screen (scrollable) -->
+      <div class="display-container" id="display-container">
+        <div class="history-panel" id="history-panel"></div>
+        <div class="expression-line" id="expression" contenteditable="false" inputmode="none"></div>
+        <div class="result-line" id="result">0</div>
+      </div>
+
+      <!-- Mode Selector -->
+      <div class="mode-bar">
+        <button class="mode-btn active" id="mode-basic-btn">
+          <span>Basic</span>
+        </button>
+        <button class="mode-btn" id="mode-trig-btn">
+          <span>Scientific</span>
+        </button>
+      </div>
+
+      <!-- Scientific Panel -->
+      <div class="keypad extended-keypad hidden" id="scientific-panel">
+        <button class="btn btn-sci" data-fn="sin">sin</button>
+        <button class="btn btn-sci" data-fn="cos">cos</button>
+        <button class="btn btn-sci" data-fn="tan">tan</button>
+        <button class="btn btn-sci" data-fn="log">log</button>
+        <button class="btn btn-sci" data-fn="ln">ln</button>
+        <button class="btn btn-sci" data-val="^">x^y</button>
+        <button class="btn btn-sci" data-val="π">π</button>
+        <button class="btn btn-sci" data-fn="sqrt">√</button>
+      </div>
+
+      <!-- Main Keypad -->
+      <div class="keypad main-keypad">
+        <button class="btn btn-clear-all glow-red" id="btn-ac">AC</button>
+        <button class="btn btn-clear-one glow-gold" id="btn-ce">⌫</button>
+        <button class="btn btn-op" data-val="%">%</button>
+        <button class="btn btn-op" data-val="÷">÷</button>
+
+        <button class="btn btn-num" data-val="7">7</button>
+        <button class="btn btn-num" data-val="8">8</button>
+        <button class="btn btn-num" data-val="9">9</button>
+        <button class="btn btn-op" data-val="×">×</button>
+
+        <button class="btn btn-num" data-val="4">4</button>
+        <button class="btn btn-num" data-val="5">5</button>
+        <button class="btn btn-num" data-val="6">6</button>
+        <button class="btn btn-op" data-val="-">-</button>
+
+        <button class="btn btn-num" data-val="1">1</button>
+        <button class="btn btn-num" data-val="2">2</button>
+        <button class="btn btn-num" data-val="3">3</button>
+        <button class="btn btn-op" data-val="+">+</button>
+
+        <button class="btn btn-num span-2" data-val="0">0</button>
+        <button class="btn btn-num" data-val=".">.</button>
+        <button class="btn btn-equals glow-gold" id="btn-equals">=</button>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="cal_script.js"></script>
+</body>
+</html>
