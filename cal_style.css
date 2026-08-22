@@ -248,7 +248,7 @@ body {
   word-break: break-all;
 }
 
-/* Expression line – now editable with a visible caret */
+/* Expression line – display only, no focus/caret */
 .expression-line {
   font-size: 1rem;
   color: rgba(255, 255, 255, 0.6);
@@ -258,9 +258,9 @@ body {
   text-align: right;
   flex-shrink: 0;
   outline: none;
-  caret-color: var(--gold-glow);
   word-break: break-all;
   white-space: pre-wrap;
+  pointer-events: none;
 }
 
 .result-line {
